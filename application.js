@@ -17,7 +17,8 @@ $(document).ready(function() {
     })
 
     request.done(function(response) {
-
+      // need to update the href of the share button
+      // so that the text of the tweet is the response quote text
       $("#quote-holder").find("#quote-target").text("");
       $('#quote-target').append(response.quoteText);
     })
