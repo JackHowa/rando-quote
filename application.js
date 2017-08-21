@@ -21,6 +21,15 @@ $(document).ready(function() {
       // so that the text of the tweet is the response quote text
       $("#quote-holder").find("#quote-target").text("");
       $('#quote-target').append(response.quoteText);
+
+      // remove twitter widget upon reload
+      $('#twitter-widget-0').remove();
+      var tweetBtn = $('<a></a>')
+        .addClass('twitter-share-button')
+        .attr('href', 'http://twitter.com/share')
+        .attr('data-url', 'http://test.com')
+        .attr('data-text', $('#tweetText').val());
+    $("#quote-holder").append(tweetBtn);
     })
 
   })
