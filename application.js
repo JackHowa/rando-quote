@@ -3,14 +3,6 @@ $(document).ready(function() {
     // prevent any default events from happening without ajax
     event.preventDefault();
 
-    // test to ensure that button is indeed clicking
-    console.log("clicked");
-
-    // define form element
-    var $form = $(this);
-    var method = $form.attr("method");
-    var action = $form.attr("action");
-
     // using the forismatic api
     // via http://forismatic.com/en/api/
     request = $.ajax({
@@ -25,12 +17,8 @@ $(document).ready(function() {
     })
 
     request.done(function(response) {
-      console.log(response);
 
-      $(".container").find("#quote-target").text("");
-      // $(".container").find("#horse_errors").remove();
-      //
-      // $("#add_new_horse_form").hide();
+      $("#quote-holder").find("#quote-target").text("");
       $('#quote-target').append(response.quoteText);
     })
 
