@@ -23,14 +23,13 @@ $(document).ready(function() {
       $('#quote-target').append(response.quoteText);
 
       // remove twitter widget upon reload
-      $('#twitter-widget-0').remove();
-      var tweetBtn = $('<a></a>')
-        .addClass('twitter-share-button')
-        .attr('href', 'http://twitter.com/share')
-        .attr('data-url', 'http://test.com')
-        .attr('data-text', $('#tweetText').val());
-    $("#quote-holder").append(tweetBtn);
-    })
+      // $('#twitter-widget-0').attribute();
 
+
+  })
+})
+$("#twitter-share-button").on("click", function() {
+    event.preventDefault();
+    window.location.href = "https://twitter.com/intent/tweet?text=" + $("#quote-holder").find("#quote-target").text();
   })
 })
